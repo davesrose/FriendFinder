@@ -1,0 +1,80 @@
+1: Might as well talk politics, do you consider yourself liberal or conservative?
+
+1. Very Conservative
+2. Conservative
+3. Middle of the Road
+4. Liberal
+5. Very Liberal
+
+2: What's your favorite music genre?
+
+1. Classical
+2. Jazz
+3. R&B
+4. Classic Rock
+5. Heavy Metal
+
+3: What's your favorite movie genre?
+
+1. Comedy
+2. Action
+3. Sci-fi
+4. Foreign
+5. Drama
+
+4: What's your favorite ice cream flavor?
+
+1. Vanilla
+2. Chocolate
+3. Cookies and Cream
+4. Neapolitan
+5. Pistachio
+
+5: What's your favorite book?
+
+1. The Bible
+2. Wuthering Heights
+3. Girl with the Dragon Tattoo
+4. The Man Who Mistook His Wife for a Hat
+5. Harry Potter
+
+6: What's your favorite sport to play?
+
+1: Football
+2: Basketball
+3: Soccer
+4: Volleyball
+5: I hate playing sports!
+
+7: What's your favorite sport to watch?
+
+1: Football
+2: Basketball
+3: Soccer
+4: Hockey
+5: Sports are overrated!
+
+8: What's the most interesting topic to you?
+
+1: Current Events
+2: Celebrity Gossip
+3: Science and Technology
+4: Politics
+5: Religion
+
+9: What's your favorite color?
+
+1: Red
+2: Yellow
+3: Blue
+4: Green
+5: Purple
+
+10: What's a favorite hobby?
+
+1: Listening to music
+2: Watching movies
+3: Fishing
+4: Hiking or camping
+5: Painting
+

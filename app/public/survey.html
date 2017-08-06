@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey | Friend Finder</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Sedgwick+Ave" rel="stylesheet">
+	<script src="https://use.fontawesome.com/ae85989865.js"></script>
+</head>
+<body>
+<div class="wrapper">
+	<div class="header"><div class="containerHeader"><div class="logo"></div></div></div>
+	<div class="body"><div class="containerBody">
+		<h2>Survey Questions</h2>
+
+		<h3>Input Your Name</h3>
+		<input type="text" id="name" class="input" required>
+
+		<h3>Link to your photo</h3>
+		<input type="text" id="photo" class="input" required>
+
+		<h3>Enter a short bio about yourself:</h3>
+		<textarea id="description" class="input" required></textarea>
+
+	    <h3>Might as well talk politics, do you consider yourself liberal or conservative?</h3>
+	    <select class="chose" id="q1">
+	      <option value=""></option>
+	      <option value="1">1 Very Conservative</option>
+	      <option value="2">2 Conservative</option>
+	      <option value="3">3 Middle of the Road</option>
+	      <option value="4">4 Liberal</option>
+	      <option value="5">5 Very Liberal</option>
+	    </select>
+
+	    <h3>What's your favorite music genre?</h3>
+	    <select class="chose" id="q2">
+	      <option value=""></option>
+	      <option value="1">1 Classical</option>
+	      <option value="2">2 Jazz</option>
+	      <option value="3">3 R&B</option>
+	      <option value="4">4 Classic Rock</option>
+	      <option value="5">5 Heavy Metal</option>
+	    </select>
+
+	    <h3>What's your favorite movie genre?</h3>
+	    <select class="chose" id="q3">
+	      <option value=""></option>
+	      <option value="1">1 Comedy</option>
+	      <option value="2">2 Action</option>
+	      <option value="3">3 Sci-fi</option>
+	      <option value="4">4 Foreign</option>
+	      <option value="5">5 Drama</option>
+	    </select>
+
+	    <h3>What's your favorite ice cream flavor?</h3>
+	    <select class="chose" id="q4">
+	      <option value=""></option>
+	      <option value="1">1 Vanilla</option>
+	      <option value="2">2 Chocolate</option>
+	      <option value="3">3 Cookies and Cream</option>
+	      <option value="4">4 Neapolitan</option>
+	      <option value="5">5 Pistachio</option>
+	    </select>
+
+	    <h3>What's your favorite book?</h3>
+	    <select class="chose" id="q5">
+	      <option value=""></option>
+	      <option value="1">1 The Bible</option>
+	      <option value="2">2 Wuthering Heights</option>
+	      <option value="3">3 Girl with the Dragon Tattoo</option>
+	      <option value="4">4 The Man Who Mistook His Wife for a Hat</option>
+	      <option value="5">5 Harry Potter</option>
+	    </select>
+
+	    <h3>What's your favorite sport to play?</h3>
+	    <select class="chose" id="q6">
+	      <option value=""></option>
+	      <option value="1">1 Football</option>
+	      <option value="2">2 Basketball</option>
+	      <option value="3">3 Soccer</option>
+	      <option value="4">4 Volleyball</option>
+	      <option value="5">5 I hate playing sports!</option>
+	    </select>
+
+	    <h3>What's your favorite sport to watch?</h3>
+	    <select class="chose" id="q7">
+	      <option value=""></option>
+	      <option value="1">1 Football</option>
+	      <option value="2">2 Basketball</option>
+	      <option value="3">3 Soccer</option>
+	      <option value="4">4 Hockey</option>
+	      <option value="5">5 Sports are overrated!</option>
+	    </select>
+
+	    <h3>What's the most interesting topic to you?</h3>
+	    <select class="chose" id="q8">
+	      <option value=""></option>
+	      <option value="1">1 Current Events</option>
+	      <option value="2">2 Celebrity Gossip</option>
+	      <option value="3">3 Science and Technology</option>
+	      <option value="4">4 Politics</option>
+	      <option value="5">5 Sports are overrated!</option>
+	    </select>
+
+	    <h3>What's your favorite color?</h3>
+	    <select class="chose" id="q9">
+	      <option value=""></option>
+	      <option value="1">1 Red</option>
+	      <option value="2">2 Yellow</option>
+	      <option value="3">3 Blue</option>
+	      <option value="4">4 Green</option>
+	      <option value="5">5 Purple</option>
+	    </select>
+
+	    <h3>What's a favorite hobby?</h3>
+	    <select class="chose" id="q10">
+	      <option value=""></option>
+	      <option value="1">1 Listening to music</option>
+	      <option value="2">2 Watching movies</option>
+	      <option value="3">3 Fishing</option>
+	      <option value="4">4 Hiking or camping</option>
+	      <option value="5">5 Painting</option>
+	    </select>
+
+	    <button type="submit" id="submit"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>Submit</button>
+
+	</div></div>
+	<div class="footer"><div class="containerFooter">&copy;2017 | Friend Finder&nbsp;&nbsp;&nbsp;<a href="/api/friends">AJAX Friends List</a></div></div>
+</div>
+
+<div class="matchDialogue">
+	<div class="window">
+		<div id="matchedName">Ellen Ripley</div>
+		<div class="img"><img src="images/10.jpg" width="300"></div>
+		<p class="matchDescription">Ellen Ripley is a Warrant Officer for Weyland corporation.  She's currently serving aboard the Nostromo, and has a daughter back home, named Amanda.  She's strong willed and follows protocols.</p>
+		<button type="submit" id="close"><i class="fa fa-window-close" aria-hidden="true" style="margin-right: 5px;"></i>Close Window</button>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(".matchDialogue").hide();
+	function tempAlert(msg,duration) {
+		 var el = document.createElement("div");
+		 el.setAttribute("style","position:fixed;top:30%;left:40%;background-color:white;color:#000;padding:40px;box-shadow:10px 10px 10px #000;");
+		 el.innerHTML = msg;
+		 setTimeout(function(){
+		  el.parentNode.removeChild(el);
+		 },duration);
+		 document.body.appendChild(el);
+	}
+
+	$("#submit").on("click", function() {
+		var isFilled = true;
+		if ($(".input").val() === "") {
+			isFilled = false;
+		}
+		if ($(".chose").val() === "") {
+			isFilled = false;
+		}
+		if (isFilled === false) {
+			tempAlert("You havent filled out the survey", 2000);
+		} else {
+			var currentUser = {
+					name: $("#name").val().trim(),
+					image: $("#photo").val().trim(),
+					description: $("#description").val().trim(),
+					answers: [
+						$("#q1").val().trim(),
+						$("#q2").val().trim(),
+						$("#q3").val().trim(),
+						$("#q4").val().trim(),
+						$("#q5").val().trim(),
+						$("#q6").val().trim(),
+						$("#q7").val().trim(),
+						$("#q8").val().trim(),
+						$("#q9").val().trim(),
+						$("#q10").val().trim()
+					]
+				}
+			console.log(currentUser);
+			$.post("/api/friends", currentUser, function(data) {
+				console.log(data.findAns);
+				if (data.name === "duplicate") {
+					tempAlert("You already filled out the survey", 2000);
+				} else{
+					$("#matchedName").html(data.name);
+					$(".img img").attr("src", data.image);
+					$(".matchDescription").html(data.description);
+					$(".matchDialogue").show();
+					$("#close").on("click", function() {
+						$(".matchDialogue").hide();
+					});
+				}
+			});
+		}
+	});
+</script>
+
+</body>
+</html>
