@@ -1,4 +1,4 @@
-#Friend Finder - Node and Express Server hosted on Heroku
+# Friend Finder - Node and Express Server hosted on Heroku
 
 The live version of this homework assignment is here: [http://desolate-temple-11248.herokuapp.com/](http://desolate-temple-11248.herokuapp.com/)
 

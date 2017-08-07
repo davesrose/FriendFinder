@@ -29,7 +29,7 @@ module.exports = function(app) { //create module for api friends
   		for (var j=0; j < currentFriend.answers.length; j++) { //create a nested loop that will go through each friend answer array
   			var currentFriendAns = currentFriend.answers[j]; //create a current friend answer variable from the answers array
   			var currentUserAns = userAns[j]; //create a user answer variable from user answer array
-  			difference += Math.abs(parseInt(currentUserAns)-parseInt(currentFriendAns)); //keep adding the difference between the corresponding 
+  			difference += Math.abs(parseInt(currentUserAns)-parseInt(currentFriendAns)); //keep adding the difference between the corresponding user answer and friend answer
   		}
   		console.log(currentFriend.name+" | match:"+difference); //log each persons match score with current user
   		if (difference <= match.findAns) { //if new returned difference score is less then or equal to the previous matched score difference
