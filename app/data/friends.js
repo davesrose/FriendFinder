@@ -1,4 +1,6 @@
 
+// My friends JSON file: I tried to be cute and used celebrities or TV/movie characters
+
 var friends = [
 	{
 		name: "Jill Taylor",

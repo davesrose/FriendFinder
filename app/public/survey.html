@@ -130,6 +130,8 @@
 	<div class="footer"><div class="containerFooter">&copy;2017 | Friend Finder&nbsp;&nbsp;&nbsp;<a href="/api/friends">AJAX Friends List</a></div></div>
 </div>
 
+<!-- ====My own modal for showing the matched friend=== -->
+
 <div class="matchDialogue">
 	<div class="window">
 		<div id="matchedName">Ellen Ripley</div>
@@ -140,7 +142,10 @@
 </div>
 
 <script type="text/javascript">
-	$(".matchDialogue").hide();
+
+	$(".matchDialogue").hide(); //hide the matched friend modal
+
+	//function for creating an alert window
 	function tempAlert(msg,duration) {
 		 var el = document.createElement("div");
 		 el.setAttribute("style","position:fixed;top:30%;left:40%;background-color:white;color:#000;padding:40px;box-shadow:10px 10px 10px #000;");
@@ -151,18 +156,21 @@
 		 document.body.appendChild(el);
 	}
 
-	$("#submit").on("click", function() {
-		var isFilled = true;
-		if ($(".input").val() === "") {
+	$("#submit").on("click", function() { //on click of submit button
+		$("#matchedName").html("");
+		$(".img img").attr("src", "");
+		$(".matchDescription").html(""); //first clear out previous match details so user is less likely to see them before callback functions are used
+		var isFilled = true; //create boolean for checking if forms are answered
+		if ($(".input").val() === "") { //if .input elements are empty, set isFilled to false
 			isFilled = false;
 		}
-		if ($(".chose").val() === "") {
+		if ($(".chose").val() === "") { //if .chose values are empty, set isFilled to false
 			isFilled = false;
 		}
-		if (isFilled === false) {
-			tempAlert("You havent filled out the survey", 2000);
-		} else {
-			var currentUser = {
+		if (isFilled === false) { //if values are empty
+			tempAlert("You havent filled out the survey", 2000); //run the alert function
+		} else { //else form has been filled out
+			var currentUser = { //create a current user object that has the same format as the rest of the friends JSON object
 					name: $("#name").val().trim(),
 					image: $("#photo").val().trim(),
 					description: $("#description").val().trim(),
@@ -179,18 +187,18 @@
 						$("#q10").val().trim()
 					]
 				}
-			console.log(currentUser);
-			$.post("/api/friends", currentUser, function(data) {
-				console.log(data.findAns);
-				if (data.name === "duplicate") {
-					tempAlert("You already filled out the survey", 2000);
-				} else{
-					$("#matchedName").html(data.name);
-					$(".img img").attr("src", data.image);
-					$(".matchDescription").html(data.description);
-					$(".matchDialogue").show();
-					$("#close").on("click", function() {
-						$(".matchDialogue").hide();
+			console.log(currentUser); //just logging current user object
+			$.post("/api/friends", currentUser, function(data) { //posting current user data with friends api: pass data from response
+				console.log("The match's score: "+data.findAns); //log the matched friend's match score
+				if (data.name === "duplicate") { //in the api, I created validation that returns "duplicate" name if person has already filled out survey
+					tempAlert("You already filled out the survey", 2000); //run alert function to inform them they've already filled out form
+				} else{ //else if not duplicate
+					$("#matchedName").html(data.name); //fill modal window's name with returned name
+					$(".img img").attr("src", data.image); //fill the image src with the returned link
+					$(".matchDescription").html(data.description); //fill the window's description with the returned description
+					$(".matchDialogue").show(); //then show modal window
+					$("#close").on("click", function() { //if user clicks the close button in the modal window
+						$(".matchDialogue").hide(); //hide the modal
 					});
 				}
 			});
